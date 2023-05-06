@@ -1,0 +1,48 @@
+﻿<deskband:CSDeskBandWpf x:Class="DeskBand.NetSpeed"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeskBand"
+        xmlns:deskband="clr-namespace:CSDeskBand.Wpf;assembly=CSDeskBand.Wpf"
+        mc:Ignorable="d"
+        FontSize="8px"
+        FontFamily="Cascadia Code"
+        d:DesignWidth="90" d:DesignHeight="20" MouseDown="ShowToolWindow">
+    <Grid>
+
+        <!--创建列标签-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+
+        <!--第一列-->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock  Name="tb_cpuinfo" Foreground="White" Text="{Binding CpuInfo}" TextAlignment="Left" VerticalAlignment="Center" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <TextBlock  Name="tb_raminfo" Foreground="White" Text="{Binding RamInfo}" TextAlignment="Left" VerticalAlignment="Center" />
+            </Grid>
+        </Grid>
+
+        <!--第二列-->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock Name="tb_sendSpeed" Foreground="White" Text="{Binding SendSpeed}" TextAlignment="Right"  VerticalAlignment="Center" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <TextBlock  Name="tb_revSpeed"  Foreground="White" Text="{Binding RevSpeed}" TextAlignment="Right"  VerticalAlignment="Center" />
+            </Grid>
+        </Grid>
+    </Grid>
+</deskband:CSDeskBandWpf>
